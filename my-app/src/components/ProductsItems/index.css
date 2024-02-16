@@ -1,0 +1,50 @@
+.bg-container {
+    background-color: #000;
+    color: #fff;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.heading {
+    color: #fff;
+    align-items: flex-start;
+    text-align: left;
+    margin-right: 20px;
+}
+
+#ul {
+    list-style-type: disc;
+    background-color: #fff;
+}
+
+.bag-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.img {
+    width: 100px;
+    top: -29.66px;
+    left: -7.54px;
+    border-radius: 5px;
+
+}
+
+.productsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail {
+    width: 350px;
+    display: flex;
+    flex: 0 0 25%;
+    padding: 10px;
+}

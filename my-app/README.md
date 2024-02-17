@@ -65,6 +65,51 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### React application's main component (`App.js`). This component imports several other components and renders them within its structure. 
+
+1. Importing CSS file (`App.css`) and various components (`Navbar`, `ProductsList`, `ProductsDetails`, and `MyComponent`).
+2. Defining the `App` function component.
+3. Inside the `App` component:
+    => Rendering a `<div>` with the class name "App".
+    => Inside this `<div>`:
+        => Rendering the `Navbar` component.
+        => Rendering the `ProductsList` component.
+        => Rendering the `ProductsDetails` component twice. (You import and use `ProductsDetails` both as `ProductsDetails` and as `MyComponent`.)
+4. Exporting the `App` component as the default export of this file.
+
+### `Navbar` component it is a functional component written in JSX, representing the navigation bar of your application. It contains links to different sections of your website and some icons. Here's a breakdown of the component:
+
+1. It renders a `<nav>` element with a class of "flex items-center justify-between flex-wrap bg-[#000] p-6", 
+    which likely sets up a navigation bar with some styling (e.g., flex layout, background color, padding).
+2. Inside the `<nav>` element, it contains:
+    => A logo or brand name "TANN TRIM".
+    => A menu button for toggling the navigation menu on small screens (mobile).
+    => Navigation links (<a> elements) for different sections like "Bags", "Travel", "Accessories", "Gifting", and "Jewelry".
+    => Some social media icons, possibly for linking to your social media profiles.
+
+
+### `MyComponent` function is a React functional component that fetches a list of products from the "https://fakestoreapi.com/products" API endpoint and renders them in a UI. Here's a breakdown of the component:
+
+1. State Variables:
+    => `products`: Holds the array of products fetched from the API.
+    => `isLoading`: Tracks whether the data is still being loaded.
+    => `error`: Holds any error that might occur during the API call.
+    => `number`: Holds a count, initialized to 0, which can be increased by clicking a button.
+
+2. increaseNumber Function: This function is triggered when a button is clicked and increments the `number` state by 1.
+
+3. useEffect Hook: This hook is responsible for fetching the products from the API when the component mounts. 
+   It sets the `products` state with the fetched data. If there's an `error` during the fetch, it updates the error state.
+
+4. Conditional Rendering:
+    => If `isLoading` is true, it displays "Loading...".
+    => If there's an `error`, it displays the error message.
+    =>If neither `isLoading` nor `error` is true, it renders the products fetched from the API.
+
+5. Rendering Products: It maps over the `products` array and renders each product's details, 
+    including its image, title, price, rating, and count. There's also a button associated with each product that, when clicked, calls the `increaseNumber` function to increment the `number` state.
